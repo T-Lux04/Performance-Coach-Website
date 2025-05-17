@@ -6,6 +6,10 @@ const fadeUp = {
   hidden: { opacity: 0, y: 100 },
   visible: { opacity: 1, y: 0, transition: { duration: 2.0, ease: "easeOut" } },
 };
+const fadeLeft = {
+  hidden: {opacity: 0, x: 100},
+  visible: {opacity: 1, x: 0, transition: {duration:1.0, ease: "easeOut"}},
+}
 
 export default function AnimatedSection({ children }) {
   const [ref, inView] = useInView();
@@ -15,7 +19,7 @@ export default function AnimatedSection({ children }) {
       ref={ref}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      variants={fadeUp}
+      variants={fadeLeft}
       style={{ marginBottom: "4rem" }}
     >
       {children}

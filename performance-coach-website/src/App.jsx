@@ -4,18 +4,21 @@ import HeroSection from './components/HeroSection'
 import ServicesSection from './components/ServicesSection'
 import TestimonialsSection from './components/TestimonialsSection'
 import Footer from './components/Footer'
-import AnimatedSection from "./components/AnimatedSections";
-
+import AnimateLeft from "./components/animateLeft";
+import AnimateRight from "./components/animateRight";
 function App() {
   return (
     <>
       <NavbarComponent />      
 
       <HeroSection />            
-      <AnimatedSection>
+      <AnimateLeft>
         <ServicesSection />
-      </AnimatedSection>
-      <TestimonialsSection />
+      </AnimateLeft>
+      <AnimateRight>
+        <TestimonialsSection />
+      </AnimateRight>
+    
       <Footer />
     </>
   )

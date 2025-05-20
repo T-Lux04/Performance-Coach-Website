@@ -1,17 +1,12 @@
-// components/AnimatedSection.jsx
 import { motion } from "framer-motion";
 import { useInView } from "../hooks/UseInView";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 100 },
-  visible: { opacity: 1, y: 0, transition: { duration: 2.0, ease: "easeOut" } },
-};
 const fadeLeft = {
   hidden: {opacity: 0, x: 100},
-  visible: {opacity: 1, x: 0, transition: {duration:1.0, ease: "easeOut"}},
+  visible: {opacity: 1, x: 0, transition: {duration:2.0, ease: "easeOut"}},
 }
 
-export default function AnimatedSection({ children }) {
+export default function AnimateLeft({ children }) {
   const [ref, inView] = useInView();
 
   return (

@@ -11,7 +11,7 @@ export default function ServicesSection(){
             <h2 className="text-4xl font-bold text-center text-gold-400">What I Offer</h2>
             <div className="grid md:grid-cols-3 gap-8 mt-12">
             {["1-on-1 Coaching", "Group Sessions", "Online Courses"].map((service, index) => (
-                <motion.div key={index} className="p-8 bg-black shadow-lg rounded-xl text-center border border-gold-500" whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(255, 215, 0, 0.7)" }}>
+                <motion.div key={index} id="services" className="p-8 bg-black shadow-lg rounded-xl text-center border border-gold-500" whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(255, 215, 0, 0.7)" }}>
                 <img src={`/service-${index + 1}.jpg`} alt={service} className="rounded-lg mb-4 w-full h-40 object-cover" />
                 <h3 className="text-2xl font-semibold text-gold-400">{service}</h3>
                 <p className="mt-2 text-gray-400">A short description of the service.</p>

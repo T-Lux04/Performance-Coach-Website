@@ -18,6 +18,9 @@
 #testimonials{
   border-color: #D4AF37;
 }
+#services{
+  border-color: #D4AF37;
+}
 
 a {
   font-weight: 500;
@@ -42,7 +45,7 @@ h1 {
   color: #FFD700; /* Bright Gold */
 }
 
-/* button {
+button {
   border-radius: 8px;
   border: 1px solid #D4AF37;
   padding: 0.6em 1.2em;

@@ -17,7 +17,7 @@ export default function NavbarComponent(){
                 <nav className="space-x-6">
                 {["About", "Services", "Testimonials", "Contact"].map((item, index) => (
                     <motion.a                    
-                    className="text-yellow-400 hover:text-yellow-500 transition-colors duration-300 text-lg font-semibold"
+                    className="text-yellow-400 hover:text-yellow-500 hover:text-xl transition-colors duration-300 text-lg font-semibold"
                     key={index}
                     href={`#${item.toLowerCase()}`}
                     whileHover={{ scale: 1.5 }}

@@ -49,7 +49,7 @@ export default function TestimonialsSection(){
             <div className="relative">
             <div className="grid md:grid-cols-3 gap-8 justify-center">
                 {testimonials.slice(currentIndex, currentIndex + 3).map((testimonial, index) => (
-                <motion.div key={index} id="testimonials" className="p-6 bg-gray-900 border  shadow-lg rounded-xl" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+                <motion.div key={index} id="testimonials" className="p-6 border  shadow-lg rounded-xl" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
                     <img src={testimonial.image} alt="Client" className="rounded-full w-20 h-20 mx-auto mb-4" />
                     <p className="text-gray-300 italic">{testimonial.quote}</p>
                     <h4 className="mt-4 font-semibold text-gold-400">{testimonial.name}</h4>

@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,9 +14,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 #testimonials{
   border-color: #D4AF37;
 }
+
 a {
   font-weight: 500;
   color: #D4AF37; /* Metallic Gold */
@@ -38,7 +42,7 @@ h1 {
   color: #FFD700; /* Bright Gold */
 }
 
-button {
+/* button {
   border-radius: 8px;
   border: 1px solid #D4AF37;
   padding: 0.6em 1.2em;

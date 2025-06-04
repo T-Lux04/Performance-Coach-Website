@@ -7,7 +7,7 @@
 
   color-scheme: dark;
   color: #F5F5F5; /* Warm White */
-  background-color: #0A0A0A; /* Rich Black */
+  background-color: #0d0c09; /* Rich Black */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,19 +16,23 @@
 }
 
 #testimonials{
-  border-color: #D4AF37;
+  border-color: #be944b;
 }
 #services{
-  border-color: #D4AF37;
+  border-color: #be944b;
+}
+
+.emph{
+  color: #be944b;
 }
 
 a {
   font-weight: 500;
-  color: #D4AF37; /* Metallic Gold */
+  color: #be944b; /* Metallic Gold */
   text-decoration: none;
 }
 a:hover {
-  color: #FFD700; /* Bright Gold */
+  color: #be944b; /* Bright Gold */
 }
 
 body {
@@ -42,27 +46,27 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  color: #FFD700; /* Bright Gold */
+  color: #be944b; /* Bright Gold */
 }
 
 button {
   border-radius: 8px;
-  border: 1px solid #D4AF37;
+  border: 1px solid #be944b;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: #0A0A0A;
-  color: #D4AF37;
+  color: #be944b;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 button:hover {
-  background-color: #D4AF37;
+  background-color: #be944b;
   color: #0A0A0A;
-  border-color: #FFD700;
+  border-color: #be944b;
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto #FFD700;
+  outline: 4px auto #be944b;
 }

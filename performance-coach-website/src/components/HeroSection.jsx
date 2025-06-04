@@ -1,19 +1,29 @@
 import { motion } from 'framer-motion';
+// import bg_vid from '../assets/videos/bg_vid.MP4';
 const Button = ({ children, ...props }) => (
     <button {...props}>{children}</button>
   );
 
 export default function HeroSection(){
     return(
-        <>
+      <div>
         {/* Hero Section */}
-        {/* style={{ backgroundImage: "url('/hero-image.jpg')" }} */}
-        <section className="h-screen flex flex-col justify-center items-center text-center bg-center relative overflow-hidden" >
-            <motion.div className="absolute inset-0"></motion.div>
-            <motion.h2 className="text-6xl font-extrabold text-gold-400 relative z-10 tracking-wider" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+        <section className="py-48 flex flex-col justify-center  items-center text-center bg-cover bg-center relative overflow-hidden">
+        {/* <video
+        className="absolute min-w-full min-h-full w-auto h-auto object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        >
+          {/* <source src={bg_vid} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>         */}
+        <motion.div className="absolute inset-0"></motion.div>
+            <motion.h2 className="text-6xl font-extrabold text-gold-400 relative z-10 tracking-wider" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 2 }}>
             Unlock Your Full Potential
             </motion.h2>
-            <motion.p className="text-lg mt-4 text-gray-300 relative z-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }}>
+            <motion.p className="text-lg mt-4 text-gray-300 relative z-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 2 }}>
             Personalized coaching to achieve peak performance.
             </motion.p>
             <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.5, delay: 1 }}>
@@ -22,6 +32,6 @@ export default function HeroSection(){
             </Button>
             </motion.div>
         </section>
-      </>
+      </div>
     )
 }

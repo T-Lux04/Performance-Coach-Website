@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-// import bg_vid from '../assets/videos/bg_vid.MP4';
+import bg_vid from '../assets/videos/bg_vid.mp4';
 const Button = ({ children, ...props }) => (
     <button {...props}>{children}</button>
   );
@@ -9,16 +9,16 @@ export default function HeroSection(){
       <div>
         {/* Hero Section */}
         <section className="py-48 flex flex-col justify-center  items-center text-center bg-cover bg-center relative overflow-hidden">
-        {/* <video
+        <video
         className="absolute min-w-full min-h-full w-auto h-auto object-cover"
         autoPlay
         muted
         loop
         playsInline
         >
-          {/* <source src={bg_vid} type="video/mp4" />
+          <source src={bg_vid} type="video/mp4" />
           Your browser does not support the video tag.
-        </video>         */}
+        </video>        
         <motion.div className="absolute inset-0"></motion.div>
             <motion.h2 className="text-6xl font-extrabold text-gold-400 relative z-10 tracking-wider" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 2 }}>
             Unlock Your Full Potential

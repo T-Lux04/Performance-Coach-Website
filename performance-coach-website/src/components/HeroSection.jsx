@@ -20,7 +20,7 @@ export default function HeroSection(){
           Your browser does not support the video tag.
         </video>        
         <motion.div className="absolute inset-0"></motion.div>
-            <motion.h2 className="text-6xl font-extrabold text-gold-400 relative z-10 tracking-wider" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 2 }}>
+            <motion.h2 className="text-6xl font-extrabold relative z-10 tracking-wider" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 2 }}>
             Unlock Your Full Potential
             </motion.h2>
             <motion.p className="text-lg mt-4 text-gray-300 relative z-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 2 }}>

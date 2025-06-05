@@ -1,28 +1,16 @@
-import './App.css'
-import NavbarComponent from './components/NavbarComponent'
-import HeroSection from './components/HeroSection'
-import ServicesSection from './components/ServicesSection'
-import TestimonialsSection from './components/TestimonialsSection'
-import Footer from './components/Footer'
-import AnimateLeft from "./components/animateLeft";
-import AnimateRight from "./components/animateRight";
-import BrandPhilosophy from './components/BrandPhilosophy'
-function App() {
-  return (
-    <>
-      <NavbarComponent />      
-      <HeroSection />      
-      <BrandPhilosophy/>      
-      <AnimateLeft>
-        <ServicesSection />
-      </AnimateLeft>
-      <AnimateRight>
-        <TestimonialsSection />
-      </AnimateRight>
-    
-      <Footer />
-    </>
-  )
-}
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home.jsx';
+import Contact from './pages/Contact.jsx';
+import Booking from './pages/Booking.jsx';
 
-export default App
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Booking" element={<Booking />} />
+      </Routes>
+    </Router>
+  );
+}

@@ -1,8 +1,7 @@
-
+import QuoteForm from "../components/QuoteForm";
 function Contact() {
   return (
-    <>
-    </>
+    <QuoteForm />
   )
 }
 

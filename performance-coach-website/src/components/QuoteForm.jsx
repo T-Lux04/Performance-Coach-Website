@@ -1,8 +1,11 @@
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
+const Button = ({ children, ...props }) => (
+    <button {...props}>{children}</button>
+  );
 
 function QuoteForm() {
   return (
-    <section className="bg-black text-yellow-400 py-16 px-6 sm:px-10 lg:px-20 border-t border-yellow-500/20">
+    <section className=" h-screen bg-black py-16 px-6 sm:px-10 lg:px-20 border-t border-yellow-500/20">
       <h2 className="text-4xl font-bold mb-10 text-center emph">Get A Quote</h2>
       <form className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {/* First Name */}
@@ -15,8 +18,9 @@ function QuoteForm() {
             name="first-name"
             type="text"
             autoComplete="given-name"
+            autoFocus={false} // explicitly set
             placeholder="John"
-            className="w-full rounded-md bg-gray-900   px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            className="w-full rounded-md bg-gray-900 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"
           />
         </div>
 
@@ -31,7 +35,7 @@ function QuoteForm() {
             type="text"
             autoComplete="family-name"
             placeholder="Doe"
-            className="w-full rounded-md bg-gray-900 text-yellow-300 placeholder-yellow-100 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            className="w-full rounded-md bg-gray-900 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"
           />
         </div>
 
@@ -46,7 +50,7 @@ function QuoteForm() {
             type="email"
             autoComplete="email"
             placeholder="you@example.com"
-            className="w-full rounded-md bg-gray-900 text-yellow-300 placeholder-yellow-100 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            className="w-full rounded-md bg-gray-900 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"
           />
         </div>
 
@@ -58,13 +62,13 @@ function QuoteForm() {
           <select
             id="stringType"
             name="stringType"
-            className="w-full appearance-none rounded-md bg-gray-900 text-yellow-300 px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-yellow-500 emph"
+            className="w-full appearance-none rounded-md bg-gray-900 px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-yellow-500 "
           >
             <option>Head Links</option>
             <option>RPM Blast</option>
           </select>
           <ChevronDownIcon
-            className="absolute top-12 right-3 h-5 w-5 text-yellow-300 pointer-events-none"
+            className="absolute top-12 right-3 h-5 w-5 pointer-events-none"
             aria-hidden="true"
           />
         </div>
@@ -76,7 +80,7 @@ function QuoteForm() {
           <select
             id="tension"
             name="tension"
-            className="w-full appearance-none rounded-md bg-gray-900 text-yellow-300 px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-yellow-500 emph"
+            className="w-full appearance-none rounded-md bg-gray-900 px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-yellow-500"
           >
             <option>70</option>
             <option>60</option>
@@ -84,7 +88,7 @@ function QuoteForm() {
             <option>40</option>
           </select>
           <ChevronDownIcon
-            className="absolute top-12 right-3 h-5 w-5 text-yellow-300 pointer-events-none"
+            className="absolute top-12 right-3 h-5 w-5 pointer-events-none"
             aria-hidden="true"
           />
         </div>
@@ -100,7 +104,10 @@ function QuoteForm() {
             className="w-full rounded-md bg-gray-900  px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500 resize-none"
         ></textarea>
         </div>
-      </form>
+        <Button className="mt-3 bg-gold-400 text-black text-xl font-bold rounded-full shadow-2xl hover:bg-gold-500 transition-transform transform hover:scale-110 relative z-10">
+            Quote Me
+        </Button>      
+        </form>
     </section>
   )
 }

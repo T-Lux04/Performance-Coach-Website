@@ -40,7 +40,7 @@ function Booking() {
   viewport={{ once: true }}
 >
   <iframe
-    src="https://tidycal.com/yourname/tennis-session"
+    src="https://calendly.com/coach-phasetennis/30min"
     title="Schedule a Session"
     className="w-full h-full"
     style={{ backgroundColor: "#000" }}

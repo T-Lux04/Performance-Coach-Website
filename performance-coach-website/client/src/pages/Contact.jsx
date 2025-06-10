@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import QuoteForm from "../components/QuoteForm";
 import RestringingSection from "../components/RestringingInfoSection";
 import { useEffect } from "react";
@@ -10,6 +11,7 @@ function Contact() {
     <>
     <RestringingSection />
     <QuoteForm />
+    <Footer />
     </>
   )
 }

@@ -25,7 +25,7 @@ const handleSubmit = async (e) => {
 };
 
   return (
-    <section className=" h-screen bg-black py-16 px-6 sm:px-10 lg:px-20 border-t border-yellow-500/20">
+    <section className="h-auto bg-black py-16 px-6 sm:px-10 lg:px-20 border-t border-yellow-500/20">
       <h2 className="text-4xl font-bold mb-10 text-center emph">Get A Quote</h2>
       <form className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {/* First Name */}
@@ -113,21 +113,25 @@ const handleSubmit = async (e) => {
           />
         </div>
         <div className="sm:col-span-2">
-        <label htmlFor="description" className="block text-lg font-semibold mb-2 emph">
-            Description
-        </label>
-        <textarea
-            id="description"
-            name="description"
-            rows={6}
-            placeholder="Write your message..."
-            className="w-full rounded-md bg-gray-900  px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500 resize-none"
-        ></textarea>
+          <label htmlFor="description" className="block text-lg font-semibold mb-2 emph">
+              Description
+          </label>
+          <textarea
+              id="description"
+              name="description"
+              rows={6}
+              placeholder="Write your message..."
+              className="w-full rounded-md bg-gray-900  px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500 resize-none"
+          ></textarea>
+          
         </div>
-        <Button className="mt-3 bg-gold-400 text-black text-xl font-bold rounded-full shadow-2xl hover:bg-gold-500 transition-transform transform hover:scale-110 relative z-10">
+        <div className="sm:col-span-2">
+          <Button className="mt-3 bg-gold-400 text-black text-xl font-bold rounded-full shadow-2xl hover:bg-gold-500 transition-transform transform hover:scale-110 relative z-10">
             Quote Me
-        </Button>      
-        </form>
+          </Button>  
+        </div>
+    
+      </form>
     </section>
   )
 }

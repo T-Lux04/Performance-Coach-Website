@@ -4,6 +4,26 @@ const Button = ({ children, ...props }) => (
   );
 
 function QuoteForm() {
+  // In your React form component
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const formData = {
+    name,
+    email,
+    message,
+    service,
+  };
+
+  await fetch('/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData),
+  });
+
+  alert("Your request has been sent!");
+};
+
   return (
     <section className=" h-screen bg-black py-16 px-6 sm:px-10 lg:px-20 border-t border-yellow-500/20">
       <h2 className="text-4xl font-bold mb-10 text-center emph">Get A Quote</h2>

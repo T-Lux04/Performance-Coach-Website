@@ -1,10 +1,6 @@
 import { motion } from 'framer-motion';
 import Logo from '../assets/images/Logo.png';
-const Button = ({ children, className = "", ...props }) => (
-    <button className={className} {...props}>
-      {children}
-    </button>
-  );
+
 
 export default function NavbarComponent(){
     return(

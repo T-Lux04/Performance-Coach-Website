@@ -10,7 +10,7 @@ export default function HeroSection(){
     return(
       <div>
         {/* Hero Section */}
-        <section className="py-48 flex flex-col justify-center  items-center text-center bg-cover bg-center relative overflow-hidden">
+        <section className=" w-full py-52 flex flex-col justify-center  items-center text-center bg-cover bg-center relative overflow-hidden">
         <video
         className="absolute min-w-full min-h-full w-auto h-auto object-cover"
         autoPlay

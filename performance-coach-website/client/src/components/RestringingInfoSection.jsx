@@ -6,7 +6,7 @@ function RestringingSection(){
         <section className="py-20 px-6 sm:px-16 ">
         <div className="max-w-5xl mx-auto text-center">
             <motion.h2
-            className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-12 emph"
+            className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-24 emph font-serif"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -14,7 +14,6 @@ function RestringingSection(){
             >
             🎾 Precision Starts at the Strings
             </motion.h2>
-            <p className="border-t border-yellow-500 mb-6"></p>
             <motion.p
             className="text-lg sm:text-xl leading-relaxed"
             initial={{ opacity: 0 }}

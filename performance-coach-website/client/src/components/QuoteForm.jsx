@@ -25,8 +25,8 @@ const handleSubmit = async (e) => {
 };
 
   return (
-    <section className="h-auto bg-black py-16 px-6 sm:px-10 lg:px-20 border-t border-yellow-500/20">
-      <h2 className="text-4xl font-bold mb-10 text-center emph">Get A Quote</h2>
+    <section className="h-auto bg-black py-16 px-6 sm:px-10 lg:px-20 border-t border-yellow-500/20 text-left">
+      <h2 className="text-4xl font-bold mb-10 text-center emph font-serif">Get A Quote</h2>
       <form className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {/* First Name */}
         <div>
@@ -84,8 +84,9 @@ const handleSubmit = async (e) => {
             name="stringType"
             className="w-full appearance-none rounded-md bg-gray-900 px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-yellow-500 "
           >
-            <option>Head Links</option>
-            <option>RPM Blast</option>
+            <option>Green Head Lynx</option>
+            <option>Black RPM Blast</option>
+             <option>White Yonex Polytour Rev</option>
           </select>
           <ChevronDownIcon
             className="absolute top-12 right-3 h-5 w-5 pointer-events-none"

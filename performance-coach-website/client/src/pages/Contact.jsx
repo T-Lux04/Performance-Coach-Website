@@ -1,4 +1,5 @@
 import Footer from "../components/Footer";
+import NavbarComponent from "../components/NavbarComponent";
 import QuoteForm from "../components/QuoteForm";
 import RestringingSection from "../components/RestringingInfoSection";
 import { useEffect } from "react";
@@ -9,9 +10,11 @@ function Contact() {
       }, []);
   return (
     <>
+    <NavbarComponent/>
     <RestringingSection />
     <QuoteForm />
-    <Footer />
+    <div className="mt-6"><Footer /></div>
+    
     </>
   )
 }

@@ -47,7 +47,7 @@ function Booking() {
         </motion.p>
 
         {/* Embedded Calendar */}
-        <motion.div
+        <div
           className="rounded-2xl overflow-hidden border border-yellow-500 shadow-xl max-w-6xl mx-auto w-full h-[70vh] sm:h-[75vh] md:h-[85vh] lg:h-[100vh]"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -55,14 +55,16 @@ function Booking() {
           viewport={{ once: true }}
         >
           <iframe
+            loading="lazy"
             src="https://calendly.com/ewan-phasetennis"
             title="Schedule a Session"
+            allow="fullscreen; payment; camera; microphone; autoplay; clipboard-write"
             className="w-full h-full"
             style={{ backgroundColor: "#000" }}
           >
             Error connecting to calendar
           </iframe>
-        </motion.div>
+        </div>
 
         {/* CTA Message */}
         <motion.p

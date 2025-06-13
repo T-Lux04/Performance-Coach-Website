@@ -24,11 +24,11 @@ function Home() {
           </AnimateLeft>
         </div>
 
-        <div className="mt-12">
+        {/* <div className="mt-12">
           <AnimateRight>
             <TestimonialsSection />
           </AnimateRight>
-        </div>
+        </div> */}
       </main>
 
       <Footer />

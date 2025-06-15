@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import bg_vid from '../assets/videos/bg_vid.mp4';
+import poster_vid from '../assets/images/poster_vid.png';
 import { Link } from "react-router-dom";
 
 const Button = ({ children, ...props }) => (
@@ -13,6 +14,8 @@ export default function HeroSection(){
         <section className=" w-full py-52 flex flex-col justify-center  items-center text-center bg-cover bg-center relative overflow-hidden">
         <video
         className="absolute min-w-full min-h-full w-auto h-auto object-cover"
+        loading = "lazy"
+        poster={poster_vid}
         autoPlay
         muted
         loop

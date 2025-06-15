@@ -20,7 +20,7 @@ console.log("Received form data:", req.body);
 
   try {
     await resend.emails.send({
-      from: 'Coach@phasetennis.co.uk',
+      from: 'onboarding@resend.dev',
       // to: 'Coach@phasetennis.co.uk',
       to: ['luxtimothee@gmail.com'],
       reply_to: `${firstName} ${lastName} <${email}>`,

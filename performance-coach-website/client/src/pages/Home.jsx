@@ -5,7 +5,6 @@ import ServicesSection from '../components/ServicesSection'
 import TestimonialsSection from '../components/TestimonialsSection'
 import Footer from '../components/Footer'
 import AnimateLeft from "../components/animateLeft";
-import AnimateRight from "../components/animateRight";
 import BrandPhilosophy from '../components/BrandPhilosophy'
 function Home() {
   return (

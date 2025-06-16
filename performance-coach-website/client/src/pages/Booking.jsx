@@ -46,7 +46,7 @@ function Booking() {
           viewport={{ once: true }}
         >
           <iframe
-            loading="lazy
+            loading="lazy"
             src="https://calendly.com/coach-phasetennis"
             title="Schedule a Session"
             allow="fullscreen; payment; camera; microphone; autoplay; clipboard-write"

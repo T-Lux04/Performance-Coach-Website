@@ -14,15 +14,6 @@ function Booking() {
     <div className="min-h-screen flex flex-col">
       {/* Header */}
       <NavbarComponent/>
-      {/* <header className="w-full shadow-md p-4 flex justify-center items-center z-50 border-b border-yellow-500 mb-10"> */}
-        {/* <motion.img
-          src={escLogo}
-          alt="Every Step Counts Logo"
-          className="w-auto h-auto max-h-60 object-contain"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.0 }}
-        /> */}
         <motion.h2
             className="text-4xl sm:text-5xl font-extrabold tracking-tight mt-12 emph font-serif"
             initial={{ opacity: 0, y: 30 }}
@@ -55,7 +46,7 @@ function Booking() {
           viewport={{ once: true }}
         >
           <iframe
-            loading="lazy"
+            loading="lazy
             src="https://calendly.com/coach-phasetennis"
             title="Schedule a Session"
             allow="fullscreen; payment; camera; microphone; autoplay; clipboard-write"

@@ -22,7 +22,6 @@ function Home() {
             <ServicesSection />
           </AnimateLeft>
         </div>
-
         {/* <div className="mt-12">
           <AnimateRight>
             <TestimonialsSection />

@@ -15,19 +15,27 @@ app.use(cors({
 }));
 app.use(bodyParser.json());
 
+
+
 app.post('/api/contact', async (req, res) => {
-  const { name, email, message, service } = req.body;
+  const { firstName, lastName, email, stringType, tension, description} = req.body;
+
+console.log("Received form data:", req.body);
 
   try {
     await resend.emails.send({
-      from: 'Contact Form <contact@yourdomain.com>',
-      to: 'owner@email.com', // business owner's email
-      subject: `New Service Request: ${service}`,
+      from: 'onboarding@resend.dev',
+      // to: 'Coach@phasetennis.co.uk',
+      to: ['luxtimothee@gmail.com'],
+      reply_to: `${firstName} ${lastName} <${email}>`,
+      subject: `Restringing Service:`,
       html: `
-        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Service:</strong> ${service}</p>
-        <p><strong>Message:</strong><br/>${message}</p>
+        <p><strong>String type:</strong> ${stringType}</p>
+        <p><strong>Tension:</strong><br/> ${tension}</p>
+        <p><strong>Description:</strong><br/> ${description}</p>
+
       `,
     });
 

@@ -46,7 +46,7 @@ function Booking() {
           viewport={{ once: true }}
         >
           <iframe
-            src="https://calendly.com/ewan-phasetennis"
+            src="https://calendly.com/coach-phasetennis"
             title="Schedule a Session"
             className="w-full h-full"
             style={{ backgroundColor: "#000" }}

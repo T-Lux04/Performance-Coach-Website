@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
-import escLogo from '../assets/images/EscLogo.png';
-import Logo from '../assets/images/Logo.png'
 import Footer from "../components/Footer";
 import NavbarComponent from "../components/NavbarComponent";
 

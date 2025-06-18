@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
-import escLogo from '../assets/images/EscLogo.png';
-import Logo from '../assets/images/Logo.png'
 import Footer from "../components/Footer";
 import NavbarComponent from "../components/NavbarComponent";
 
@@ -46,7 +44,7 @@ function Booking() {
           viewport={{ once: true }}
         >
           <iframe
-            loading="lazy
+            loading="lazy"
             src="https://calendly.com/coach-phasetennis"
             title="Schedule a Session"
             allow="fullscreen; payment; camera; microphone; autoplay; clipboard-write"

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import Logo from '../assets/images/Logo.png';
+import Logo from '../assets/images/Logo.webp';
 
 
 export default function NavbarComponent(){

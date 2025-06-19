@@ -26,7 +26,7 @@ app.post('/api/contact', async (req, res) => {
   try {
     await resend.emails.send({
       from: 'Coach@phasetennis.co.uk',
-      to: ['luxtimothee@gmail.com'],
+      to: ['Coach@phasetennis.com'],
       reply_to: `${name} <${email}>`,
       subject: `Restringing Service Request`,
       html: `

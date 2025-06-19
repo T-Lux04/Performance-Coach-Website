@@ -8,40 +8,39 @@ dotenv.config();
 const app = express();
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-app.use(cors({
-  origin: 'https://performance-coach-website-static-site.onrender.com',
-  methods: ['GET', 'POST'],
-  credentials: true,
-}));
+// app.use(cors({
+//   // origin: 'https://performance-coach-website-static-site.onrender.com',
+//   methods: ['GET', 'POST'],
+//   credentials: true,
+// }));
+app.use(cors())
 app.use(bodyParser.json());
 
 
 
 app.post('/api/contact', async (req, res) => {
-  const { firstName, lastName, email, stringType, tension, description} = req.body;
+  const { name, email, service, message } = req.body;
 
-console.log("Received form data:", req.body);
+  console.log("Received form data:", req.body);
 
   try {
     await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      // to: 'Coach@phasetennis.co.uk',
+      from: 'Coach@phasetennis.co.uk',
       to: ['luxtimothee@gmail.com'],
-      reply_to: `${firstName} ${lastName} <${email}>`,
-      subject: `Restringing Service:`,
+      reply_to: `${name} <${email}>`,
+      subject: `Restringing Service Request`,
       html: `
-        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+        <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>String type:</strong> ${stringType}</p>
-        <p><strong>Tension:</strong><br/> ${tension}</p>
-        <p><strong>Description:</strong><br/> ${description}</p>
-
+        <p><strong>Service:</strong> ${service}</p>
+        <p><strong>Description:</strong><br/> ${message}</p>
       `,
     });
 
     res.status(200).json({ success: true });
+    console.log("Email sent successfully.");
   } catch (err) {
-    console.error(err);
+    console.error("Error sending email:", err);
     res.status(500).json({ error: 'Failed to send email' });
   }
 });

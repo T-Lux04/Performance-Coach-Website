@@ -10,7 +10,7 @@ const app = express();
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.use(cors({
-  origin: 'https://performance-coach-website-static-site.onrender.com',
+  origin: 'https://phasetennis.co.uk',
   methods: ['GET', 'POST'],
   credentials: true,
 }));

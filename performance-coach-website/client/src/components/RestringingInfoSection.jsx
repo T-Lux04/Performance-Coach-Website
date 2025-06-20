@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import stringing_vid from "../assets/videos/restringing_vid.mp4"
 
 
 function RestringingSection(){
@@ -14,15 +15,38 @@ function RestringingSection(){
             >
             🎾 Precision Starts at the Strings
             </motion.h2>
+            {/* Flex container for paragraph and video */}
+            <div className="flex  items-center justify-center flex-col md:flex-row gap-8 md:gap-16">
             <motion.p
-            className="text-lg sm:text-xl leading-relaxed"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 1 }}
-            viewport={{ once: true }}
+                className=" text-center text-lg sm:text-xl leading-relaxed flex-1 "
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.2, duration: 1 }}
+                viewport={{ once: true }}
             >
-            Your racket is an extension of your performance. At <strong className="emph">Phase</strong>, we offer <strong className="emph">elite-level restringing services</strong> tailored for athletes who demand precision, feel, and consistency. Whether you're a heavy hitter or a tactical grinder, the right string tension and setup can be the difference between <strong className="emph">winning a point</strong> or <strong className="emph">losing control</strong>.
+                Your racket is an extension of your performance. At <strong className="emph">Phase</strong>, we offer <strong className="emph">elite-level restringing services</strong> tailored for athletes who demand precision, feel, and consistency. Whether you're a heavy hitter or a tactical grinder, the right string tension and setup can be the difference between <strong className="emph">winning a point</strong> or <strong className="emph">losing control</strong>.
             </motion.p>
+
+            {/* Video block */}
+            <motion.div
+                className="flex-1 w-full max-w-md h-[350px] rounded-xl overflow-hidden"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                viewport={{ once: true }}
+            >
+                <video
+                className="w-full h-full object-cover"
+                loading = "lazy"
+                src={stringing_vid} // Replace with actual path
+
+                autoPlay
+                muted
+                loop
+                playsInline
+                />
+            </motion.div>
+            </div>
 
             <div className="grid md:grid-cols-3 gap-8 mt-12 text-left">
             {[

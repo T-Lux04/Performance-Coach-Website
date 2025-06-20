@@ -10,6 +10,7 @@ function QuoteForm() {
     firstName: "",
     lastName: "",
     email: "",
+    phone: "",
     stringType: "Green Head Lynx",
     tension: "70",
     description: "",
@@ -26,11 +27,12 @@ function QuoteForm() {
     const payload = {
       name: `${formData.firstName} ${formData.lastName}`,
       email: formData.email,
+      phone: formData.phone,
       service: `${formData.stringType} (${formData.tension} tension)`,
       message: formData.description,
     };
 
-    const res = await fetch("http://localhost:5000/api/contact", {
+    const res = await fetch("https://performance-coach-website.onrender.com/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
@@ -77,6 +79,18 @@ function QuoteForm() {
             value={formData.email}
             onChange={handleChange}
             placeholder="you@example.com"
+            className="w-full rounded-md bg-gray-900 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            required
+          />
+        </div>
+         <div className="sm:col-span-2">
+          <label htmlFor="phone" className="block text-lg font-semibold mb-2 emph">Mobile Number</label>
+          <input
+            name="phone"
+            type="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="+447123456789"
             className="w-full rounded-md bg-gray-900 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"
             required
           />

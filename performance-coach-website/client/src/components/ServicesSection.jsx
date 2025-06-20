@@ -23,7 +23,13 @@ export default function ServicesSection(){
             <div className="grid md:grid-cols-2 gap-8 justify-center mt-12">
             {["1-on-1 Coaching", "Restringing Service", "Phase Movement IQ Test"].map((service, index) => (
                 <motion.div key={index} id="services" className="p-8 bg-black shadow-lg rounded-xl text-center border border-gold-500" whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(255, 215, 0, 0.7)" }}>
-                <img src={serviceImages[index]} alt={service} className="rounded-lg mb-4 w-full h-80 object-contain" />
+                <div className="rounded-xl overflow-hidden mb-4 w-full h-80 flex items-center justify-center bg-black">
+                    <img
+                        src={serviceImages[index]}
+                        alt={service}
+                        className="max-h-full max-w-full object-contain rounded-xl"
+                    />
+                </div>              
                 <h3 className="text-2xl font-semibold text-gold-400">{service}</h3>
                 <p className="mt-2 text-gray-400">{serviceDescription[index]}</p>
                 <Link to={serviceLink[index]}>

@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import rateLimit from 'express-rate-limit';
 import bodyParser from 'body-parser';
 import { Resend } from 'resend';
 import dotenv from 'dotenv';
@@ -15,33 +16,36 @@ app.use(cors({
 }));
 app.use(bodyParser.json());
 
+const limiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  max: 5, // limit each IP to 5 requests per minute
+  message: 'Too many requests, please try again later.',
+  standardHeaders: true,
+  legacyHeaders: false, 
+});
 
 
-app.post('/api/contact', async (req, res) => {
-  const { firstName, lastName, email, stringType, tension, description} = req.body;
-
-console.log("Received form data:", req.body);
+app.post('/api/contact', limiter, async (req, res) => {
+  const { name, email, phone, service, message } = req.body;
 
   try {
     await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      // to: 'Coach@phasetennis.co.uk',
-      to: ['luxtimothee@gmail.com'],
-      reply_to: `${firstName} ${lastName} <${email}>`,
-      subject: `Restringing Service:`,
+      from: 'Coach@phasetennis.co.uk',
+      to: ['Coach@phasetennis.com'],
+      replyTo: `${name} <${email}>`,
+      subject: `Restringing Service Request`,
       html: `
-        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+        <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>String type:</strong> ${stringType}</p>
-        <p><strong>Tension:</strong><br/> ${tension}</p>
-        <p><strong>Description:</strong><br/> ${description}</p>
-
+        <p><strong>Mobile Number:</strong> ${phone}</p>
+        <p><strong>Service:</strong> ${service}</p>
+        <p><strong>Description:</strong><br/> ${message}</p>
       `,
     });
 
     res.status(200).json({ success: true });
+    console.log("Email sent successfully.");
   } catch (err) {
-    console.error(err);
     res.status(500).json({ error: 'Failed to send email' });
   }
 });

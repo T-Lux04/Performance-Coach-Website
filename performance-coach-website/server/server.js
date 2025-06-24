@@ -1,6 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-import rateLimit from 'express-rate-limit';
 import bodyParser from 'body-parser';
 import { Resend } from 'resend';
 import dotenv from 'dotenv';
@@ -16,22 +15,15 @@ app.use(cors({
 }));
 app.use(bodyParser.json());
 
-const limiter = rateLimit({
-  windowMs: 60 * 1000, // 1 minute
-  max: 5, // limit each IP to 5 requests per minute
-  message: 'Too many requests, please try again later.',
-  standardHeaders: true,
-  legacyHeaders: false, 
-});
 
-
-app.post('/api/contact', limiter, async (req, res) => {
+app.post('/api/contact', async (req, res) => {
   const { name, email, phone, service, message } = req.body;
 
   try {
     await resend.emails.send({
       from: 'Coach@phasetennis.co.uk',
       to: ['Coach@phasetennis.com'],
+      to: ['luxtimothee@gmail.com'],
       replyTo: `${name} <${email}>`,
       subject: `Restringing Service Request`,
       html: `

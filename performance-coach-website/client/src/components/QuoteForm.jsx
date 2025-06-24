@@ -110,20 +110,6 @@ function QuoteForm() {
           <ChevronDownIcon className="absolute top-12 right-3 h-5 w-5 pointer-events-none" />
         </div>
         <div className="relative">
-          {/* <label htmlFor="tension" className="block text-lg font-semibold mb-2 emph">String Tension</label>
-          <select
-            name="tension"
-            value={formData.tension}
-            onChange={handleChange}
-            className="w-full appearance-none rounded-md bg-gray-900 px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          >
-            <option>70</option>
-            <option>60</option>
-            <option>50</option>
-            <option>40</option>
-          </select>
-          <ChevronDownIcon className="absolute top-12 right-3 h-5 w-5 pointer-events-none" /> */}
-          
           <label htmlFor="tension" className="block text-lg font-semibold mb-2 emph">String Tension (lbs)</label>
           <input
             type="number"

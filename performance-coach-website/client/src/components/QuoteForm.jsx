@@ -12,7 +12,7 @@ function QuoteForm() {
     email: "",
     phone: "",
     stringType: "Green Head Lynx",
-    tension: "70",
+    tension: "50",
     description: "",
   });
 
@@ -109,18 +109,18 @@ function QuoteForm() {
           </select>
           <ChevronDownIcon className="absolute top-12 right-3 h-5 w-5 pointer-events-none" />
         </div>
-        <div className="relative">
+        <div className="relative">  
           <label htmlFor="tension" className="block text-lg font-semibold mb-2 emph">String Tension (lbs)</label>
           <input
             type="number"
             name="tension"
-            min="40"
-            max="80"
+            min="45"
+            max="60"
             step="1"
             value={formData.tension}
             onChange={handleChange}
             className="w-full rounded-md bg-gray-900 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-            placeholder="Enter tension (e.g. 67)"
+            placeholder="Enter tension (e.g. 57)"
             required
           />
 

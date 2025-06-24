@@ -23,7 +23,6 @@ app.post('/api/contact', async (req, res) => {
     await resend.emails.send({
       from: 'Coach@phasetennis.co.uk',
       to: ['Coach@phasetennis.com'],
-      to: ['luxtimothee@gmail.com'],
       replyTo: `${name} <${email}>`,
       subject: `Restringing Service Request`,
       html: `

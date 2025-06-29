@@ -5,6 +5,7 @@ import ServicesSection from '../components/ServicesSection'
 import TestimonialsSection from '../components/TestimonialsSection'
 import Footer from '../components/Footer'
 import AnimateLeft from "../components/animateLeft";
+import AnimateRight from "../components/animateRight";
 import BrandPhilosophy from '../components/BrandPhilosophy'
 function Home() {
   return (
@@ -22,11 +23,11 @@ function Home() {
             <ServicesSection />
           </AnimateLeft>
         </div>
-        {/* <div className="mt-12">
+        <div className="mt-12">
           <AnimateRight>
             <TestimonialsSection />
           </AnimateRight>
-        </div> */}
+        </div>
       </main>
 
       <Footer />

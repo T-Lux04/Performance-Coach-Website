@@ -9,12 +9,12 @@ import AnimateRight from "../components/animateRight";
 import BrandPhilosophy from '../components/BrandPhilosophy'
 function Home() {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-hidden">
       <NavbarComponent />
       
         <div className='w-full'>
           <HeroSection /></div>
-        <main className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <main className="max-w-screen-xl mx-auto sm:px-4 lg:px-8">
 
         <BrandPhilosophy />
 
@@ -24,9 +24,7 @@ function Home() {
           </AnimateLeft>
         </div>
         <div className="mt-12">
-          <AnimateRight>
             <TestimonialsSection />
-          </AnimateRight>
         </div>
       </main>
 

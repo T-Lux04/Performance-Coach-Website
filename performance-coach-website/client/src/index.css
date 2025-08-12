@@ -26,6 +26,10 @@
   color: #be944b;
 }
 
+/* html, body {
+  overflow-x: hidden;
+} */
+
 a {
   font-weight: 500;
   color: #be944b; /* Metallic Gold */

@@ -40,6 +40,15 @@ function QuoteForm() {
 
     if (res.ok) {
       alert("Your request has been sent!");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        stringType: "Green Head Lynx",
+        tension: "50",
+        description: "",
+      });
     } else {
       alert("Something went wrong.");
     }

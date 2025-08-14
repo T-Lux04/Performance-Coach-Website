@@ -46,6 +46,18 @@ function ConsultationForm() {
 
     if (res.ok) {
       alert("Your message has been sent!");
+        setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        dob: "",
+        experience: "beginner",
+        Goals: "",
+        additionalInfo: "",
+        howDidYouHear: "friend/family",
+        otherSource: "",
+        });
     } else {
       alert("Something went wrong.");
     }

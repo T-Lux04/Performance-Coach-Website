@@ -37,10 +37,12 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #0c0c09;
+  color: #F5F5F5;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -70,4 +72,15 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto #be944b;
+}
+
+/* Full bleed utility */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
 }

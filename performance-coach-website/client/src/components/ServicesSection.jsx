@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import service1 from '../assets/images/service-1.webp';
 import service2 from '../assets/images/service-2.webp';
+import service3 from '../assets/images/service-3.webp';
 
 import { Link } from "react-router-dom";
 
@@ -9,10 +10,10 @@ const Button = ({ children, ...props }) => (
   );
 
 export default function ServicesSection(){
-    const serviceImages = [service1, service2];
-    const serviceDescription = ["Our 1-1 coaching sessions are designed to elevate your game, refine your technique, and sharpen your mindset.", "We offer elite-level restringing services tailored for athletes who demand precision, feel, and consistency."];
-    const serviceLink = ["/booking?type=one-on-one", "/Restringing"];
-    const linkDescription = ["Enquire at Phase Tennis Academy", "Learn more about restringing and our services"]
+    const serviceImages = [service1, service2, service3];
+    const serviceDescription = ["Our 1-1 coaching sessions are designed to elevate your game, refine your technique, and sharpen your mindset.", "We offer elite-level restringing services tailored for athletes who demand precision, feel, and consistency.", "For athletes who refuse to settle for 'good enough.'This is our most exclusive, results-driven program — designed for players who already train with us, have clear competitive goals, and are ready to unlock their full potential."];
+    const serviceLink = ["/booking?type=one-on-one", "/Restringing", "/CompetitorPackage"];
+    const linkDescription = ["Enquire at Phase Tennis Academy", "Learn more about restringing and our services", "Learn more about The Phase Competitor Package (coming soon)"];
 
     return(
         <>
@@ -20,7 +21,7 @@ export default function ServicesSection(){
         <section id="services" className="py-20 px-10 text-center">
             <h2 className="text-4xl font-bold text-center emph">What I Offer</h2>
       <div className="grid md:grid-cols-2 gap-8 mt-12 place-items-stretch">
-  {["1-on-1 Coaching", "Restringing Service"].map((service, index) => (
+  {["1-on-1 Coaching", "Restringing Service", "The Phase Competitor Package"].map((service, index) => (
     <motion.div
       key={index}
       id="services"

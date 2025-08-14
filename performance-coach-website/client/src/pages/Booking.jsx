@@ -27,7 +27,7 @@ function Booking() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             >
-            Book Your 1-on-1 Coaching Consultation
+            Enquire About Your 1-on-1 Coaching Session
         </motion.h2>
       ) : (
         <motion.h2

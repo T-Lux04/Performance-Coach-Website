@@ -12,7 +12,7 @@ export default function ServicesSection(){
     const serviceImages = [service1, service2];
     const serviceDescription = ["Our 1-1 coaching sessions are designed to elevate your game, refine your technique, and sharpen your mindset.", "We offer elite-level restringing services tailored for athletes who demand precision, feel, and consistency."];
     const serviceLink = ["/booking?type=one-on-one", "/Restringing"];
-    const linkDescription = ["Book a session at Phase Tennis Academy", "Learn more about restringing and our services"]
+    const linkDescription = ["Enquire at Phase Tennis Academy", "Learn more about restringing and our services"]
 
     return(
         <>

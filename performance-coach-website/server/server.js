@@ -39,6 +39,34 @@ app.post('/api/contact', async (req, res) => {
     res.status(500).json({ error: 'Failed to send email' });
   }
 });
+app.post('/api/consultation', async (req, res) => {
+  const { name, dob, email, phone, experience, Goals, additionalInfo, howDidYouHear, otherSource} = req.body;
+
+  try {
+    await resend.emails.send({
+      from: 'Coach@phasetennis.co.uk',
+      to: ['Coach@phasetennis.com'],
+      replyTo: `${name} <${email}>`,
+      subject: `One-on-one Consultation Request`,
+      html: `
+        <p><strong>Name: </strong> ${name}</p>
+        <p><strong>Email: </strong> ${email}</p>
+        <p><strong>Mobile Number: </strong> ${phone}</p>
+        <p><strong>Date of Birth: </strong> ${dob}</p>
+        <p><strong>Experience Level: </strong> ${experience}</p>
+        <p><strong>Goals: <br/></strong> ${Goals}</p>
+        <p><strong>Additional Information: <br/></strong> ${additionalInfo}</p>
+        <p><strong>How Did You Hear About Us: </strong> ${howDidYouHear}</p>
+        <p><strong>Other Source: </strong> ${otherSource}</p>
+      `,
+    });
+
+    res.status(200).json({ success: true });
+    console.log("Email sent successfully.");
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to send email' });
+  }
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

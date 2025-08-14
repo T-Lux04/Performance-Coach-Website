@@ -12,7 +12,7 @@ const Button = ({ children, ...props }) => (
 export default function ServicesSection(){
     const serviceImages = [service1, service2, service3];
     const serviceDescription = ["Our 1-1 coaching sessions are designed to elevate your game, refine your technique, and sharpen your mindset.","We offer elite-level restringing services tailored for athletes who demand precision, feel, and consistency." ,"A 1-to-1 performance session where we assess 5 key footwork patterns that define your game."]
-    const serviceLink = ["/Booking", "/Contact", "/Booking"];
+    const serviceLink = ["/booking?type=one-on-one", "/Restringing", "/booking?type=iq-test"];
     const linkDescription = ["Book a session at Phase Tennis Academy", "Learn more about restringing and our services", "Book an IQ Movement Test"]
 
     return(

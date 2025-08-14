@@ -32,7 +32,7 @@ export default function HeroSection(){
             Personalized coaching to achieve peak performance.
             </motion.p>
             <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.5, delay: 1 }}>
-            <Link to="/Booking">
+            <Link to="/booking">
             <Button className="mt-6 bg-gold-400 text-black px-8 py-4 text-xl font-bold rounded-full shadow-2xl hover:bg-gold-500 transition-transform transform hover:scale-110 relative z-10" aria-label="Book a session at Phase Tennis Academy">
                 Book Now
             </Button>

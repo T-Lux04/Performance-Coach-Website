@@ -8,8 +8,43 @@ import Poster from "../assets/images/Comp_poster.webp";
 export default function CompetitorPackage() {
   const [formData, setFormData] = useState({});
   const handleChange = (e) => setFormData((p) => ({ ...p, [e.target.name]: e.target.value }));
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+        e.preventDefault();
+    try {
+      // Simulate form submission
+      const payload = {
+        name: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        age: formData.age,
+        trainingDuration: formData.trainingDuration,
+        competitiveLevel: formData.competitiveLevel,
+        achievements: formData.achievements,
+        shortTermGoals: formData.shortTermGoals,
+        longTermGoals: formData.longTermGoals,
+        whyPackage: formData.whyPackage,
+        commitment: formData.commitment,
+        additionalInfo: formData.additionalInfo,
+        phaseClothing: formData.phaseClothing,
+      }
+      // Send payload to server
+      const response = await fetch("https://performance-coach-website.onrender.com/api/competitor-package", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      if (response.ok) {
+        alert("Application submitted successfully!");
+        setFormData({});
+      }
+
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("There was an error submitting your application. Please try again later.");
+      return;
+    }
     console.log("Competitor Package Application:", formData);
     alert("Application submitted – we'll review and get back to you.");
   };
@@ -52,15 +87,15 @@ export default function CompetitorPackage() {
       {/* PACKAGE DETAILS */}
       <section className="mt-12 pb-16 flex justify-center">
         <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="w-full max-w-5xl bg-[#0f0f0f] border border-yellow-500/25 rounded-3xl p-10 md:p-16 space-y-10 shadow-[0_0_45px_-14px_rgba(250,204,21,0.3)]">
-          <h2 className="emph text-2xl md:text-4xl font-semibold text-center tracking-tight">Weekly Structure</h2>
+          <h2 className="emph text-2xl md:text-4xl font-semibold text-center tracking-tight">Monthly Structure</h2>
           <ul className="space-y-4 text-base md:text-lg text-gray-200">
             {[
-              ['👤','2× 1:1 coaching (technical & tactical focus)'],
+              ['👤','2× 1:1 coaching (technical & tactical focus) (Weekly)'],
               ['🎾','1× guided buddy hit (pattern & reps)'],
-              ['🏋️‍♂️','1× strength & athletic development session'],
+              ['🏋️‍♂️','1× strength & athletic development session (Weekly)'],
               ['🗓️','1× monthly performance review'],
               ['🎥','1× 30‑min asynchronous video analysis'],
-              ['🎯','1× targeted off‑court skill / mental block']
+              ['🎯','1× targeted off‑court skill / mental block (Weekly)']
             ].map(([icon,label]) => (
               <li key={label} className="flex items-start gap-4"><span className="shrink-0 text-xl leading-none pt-0.5">{icon}</span><span>{label}</span></li>
             ))}
@@ -137,7 +172,7 @@ export default function CompetitorPackage() {
           className="w-full max-w-5xl bg-[#0f0f0f] border border-yellow-500/25 rounded-3xl p-10 md:p-16 space-y-14 shadow-[0_0_55px_-15px_rgba(250,204,21,0.35)]"
         >
           <div className="space-y-3 text-center">
-            <h2 className="emph text-3xl md:text-5xl font-semibold tracking-tight">Application Form</h2>
+            <h2 className="emph text-3xl md:text-5xl font-semibold tracking-tight">Join Waiting List Form</h2>
             <p className="text-gray-300 text-base md:text-xl max-w-3xl mx-auto leading-relaxed">Fill out every field carefully. We assess suitability based on readiness, intent and performance profile.</p>
           </div>
 
@@ -182,7 +217,15 @@ export default function CompetitorPackage() {
                 <option>Yes</option>
                 <option>No</option>
               </select>
-        <textarea name="additionalInfo" placeholder="Injuries / constraints" rows={3} onChange={handleChange} className="w-full rounded-lg bg-black/60 border border-gray-700 focus:border-yellow-500 px-5 py-4 text-base" />
+              <textarea name="additionalInfo" placeholder="Injuries / constraints" rows={3} onChange={handleChange} className="w-full rounded-lg bg-black/60 border border-gray-700 focus:border-yellow-500 px-5 py-4 text-base" />
+            </div>
+            <div className="space-y-4">
+              <h3 className="emph text-xl md:text-2xl font-semibold">Phase Clothing</h3>
+              <select name="phaseClothing" onChange={handleChange} className="w-full rounded-lg bg-black/60 border border-gray-700 focus:border-yellow-500 px-5 py-4 text-base">
+                <option value="">Would you be interested in Phase clothing?</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
             </div>
           </div>
 

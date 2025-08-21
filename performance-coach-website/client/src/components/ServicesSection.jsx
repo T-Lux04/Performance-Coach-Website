@@ -13,7 +13,7 @@ export default function ServicesSection(){
     const serviceImages = [service1, service2, service3];
     const serviceDescription = ["Our 1-1 coaching sessions are designed to elevate your game, refine your technique, and sharpen your mindset.", "We offer elite-level restringing services tailored for athletes who demand precision, feel, and consistency.", "For athletes who refuse to settle for 'good enough.'This is our most exclusive, results-driven program — designed for players who already train with us, have clear competitive goals, and are ready to unlock their full potential."];
     const serviceLink = ["/booking?type=one-on-one", "/Restringing", "/CompetitorPackage"];
-    const linkDescription = ["Enquire at Phase Tennis Academy", "Learn more about restringing and our services", "Learn more about The Phase Competitor Package (coming soon)"];
+    const linkDescription = ["Enquire at Phase Tennis Academy", "Learn more about restringing and our services", "Learn more about The Phase Competitor Package"];
 
     return(
         <>

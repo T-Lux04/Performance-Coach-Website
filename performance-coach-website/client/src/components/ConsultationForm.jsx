@@ -65,7 +65,7 @@ function ConsultationForm() {
 
   return (
     <section className="h-auto bg-black py-16 mb-16 px-6 sm:px-10 lg:px-20 border-t border-yellow-500/20 text-left">
-      <h2 className="text-4xl font-bold mb-10 text-center emph font-serif">Enquire Now</h2>
+      <h2 className="text-4xl font-bold mb-10 text-center emph font-serif">Fill in your details for an invitation to book a one-to-one session</h2>
       <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
         <div>
           <label htmlFor="firstName" className="block text-lg font-semibold mb-2 emph">First Name</label>
@@ -185,7 +185,7 @@ function ConsultationForm() {
         </div>
         <div className="sm:col-span-2">
           <Button type="submit" className="mt-3 bg-gold-400 text-black text-xl font-bold rounded-full shadow-2xl hover:bg-gold-500 transition-transform transform hover:scale-110 relative z-10">
-            Submit Enquiry
+            Enquiry Now
           </Button>
         </div>
       </form>

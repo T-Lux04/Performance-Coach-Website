@@ -68,5 +68,38 @@ app.post('/api/consultation', async (req, res) => {
   }
 });
 
+app.post('/api/competitor-package', async (req, res) => {
+  const { name, email, phone, age, trainingDuration, competitiveLevel, achievements, shortTermGoals, longTermGoals, whyPackage, commitment, additionalInfo, phaseClothing } = req.body;
+
+  try {
+    await resend.emails.send({
+      from: 'Coach@phasetennis.co.uk',
+      to: ['Coach@phasetennis.com'],
+      replyTo: `${name} <${email}>`,
+      subject: `Competitor Waiting list`,
+      html: `
+        <p><strong>Name: </strong> ${name}</p>
+        <p><strong>Email: </strong> ${email}</p>
+        <p><strong>Mobile Number: </strong> ${phone}</p>
+        <p><strong>Age: </strong> ${age}</p>
+        <p><strong>Training Duration: </strong> ${trainingDuration}</p>
+        <p><strong>Competitive Level: </strong> ${competitiveLevel}</p>
+        <p><strong>Achievements: <br/></strong> ${achievements}</p>
+        <p><strong>Short-Term Goals: <br/></strong> ${shortTermGoals}</p>
+        <p><strong>Long-Term Goals: <br/></strong> ${longTermGoals}</p>
+        <p><strong>Why This Package: <br/></strong> ${whyPackage}</p>
+        <p><strong>Commitment Level: </strong> ${commitment}</p>
+        <p><strong>Additional Information: <br/></strong> ${additionalInfo}</p>
+        <p><strong>Phase Clothing Size: </strong> ${phaseClothing}</p> 
+      `,
+    });
+
+    res.status(200).json({ success: true });
+    console.log("Email sent successfully.");
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to send email' });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

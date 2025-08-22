@@ -35,6 +35,11 @@ a:hover {
   color: #be944b; /* Bright Gold */
 }
 
+html {
+  /* Force scrollbar so 100% width excludes scrollbar track */
+  overflow-y: scroll;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -74,13 +79,12 @@ button:focus-visible {
   outline: 4px auto #be944b;
 }
 
-/* Full bleed utility */
+/* Scrollbar-safe full bleed utility (avoids 100vw overflow shifting) */
+:root { --vw-safe: calc(100vw - (100vw - 100%)); }
 .full-bleed {
-  width: 100vw;
+  width: var(--vw-safe);
   position: relative;
   left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  transform: translateX(-50%);
   overflow: hidden;
 }

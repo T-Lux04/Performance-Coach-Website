@@ -37,7 +37,21 @@ export default function CompetitorPackage() {
       });
       if (response.ok) {
         alert("Application submitted successfully!");
-        setFormData({});
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          age: "",
+          trainingDuration: "",
+          competitiveLevel: "",
+          achievements: "",
+          shortTermGoals: "",
+          longTermGoals: "",
+          whyPackage: "",
+          commitment: "",
+          additionalInfo: "",
+          phaseClothing: "",
+        });
       }
 
     } catch (error) {

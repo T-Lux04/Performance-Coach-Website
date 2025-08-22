@@ -90,7 +90,7 @@ app.post('/api/competitor-package', async (req, res) => {
         <p><strong>Why This Package: <br/></strong> ${whyPackage}</p>
         <p><strong>Commitment Level: </strong> ${commitment}</p>
         <p><strong>Additional Information: <br/></strong> ${additionalInfo}</p>
-        <p><strong>Phase Clothing Size: </strong> ${phaseClothing}</p> 
+        <p><strong>Interested in Phase Clothing?: </strong> ${phaseClothing}</p> 
       `,
     });
 

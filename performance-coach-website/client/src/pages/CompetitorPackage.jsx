@@ -91,7 +91,7 @@ export default function CompetitorPackage() {
           <ul className="space-y-4 text-base md:text-lg text-gray-200">
             {[
               ['👤','2× 1:1 coaching (technical & tactical focus) (Weekly)'],
-              ['🎾','1× guided buddy hit (pattern & reps)'],
+              ['🎾','1× guided buddy hit (Subject to change)'],
               ['🏋️‍♂️','1× strength & athletic development session (Weekly)'],
               ['🗓️','1× monthly performance review'],
               ['🎥','1× 30‑min asynchronous video analysis'],
@@ -172,7 +172,7 @@ export default function CompetitorPackage() {
           className="w-full max-w-5xl bg-[#0f0f0f] border border-yellow-500/25 rounded-3xl p-10 md:p-16 space-y-14 shadow-[0_0_55px_-15px_rgba(250,204,21,0.35)]"
         >
           <div className="space-y-3 text-center">
-            <h2 className="emph text-3xl md:text-5xl font-semibold tracking-tight">Join Waiting List Form</h2>
+            <h2 className="emph text-3xl md:text-5xl font-semibold tracking-tight">Join Waiting List</h2>
             <p className="text-gray-300 text-base md:text-xl max-w-3xl mx-auto leading-relaxed">Fill out every field carefully. We assess suitability based on readiness, intent and performance profile.</p>
           </div>
 

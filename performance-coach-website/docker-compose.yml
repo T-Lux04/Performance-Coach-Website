@@ -1,0 +1,41 @@
+services:
+  server:
+    build: ./server
+    container_name: pcw-server
+    env_file:
+      - ./server/.env
+    environment:
+      - PORT=5000
+      - CORS_ORIGIN=http://localhost:5173
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/app
+    ports:
+      - "5000:5000"
+    networks:
+      - pcw
+  client:
+    build: ./client
+    container_name: pcw-client
+    depends_on:
+      - server
+    ports:
+      - "5173:80"
+    networks:
+      - pcw
+  db:
+    image: postgres:16-alpine
+    container_name: pcw-db
+    environment:
+      - POSTGRES_DB=app
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - pcw
+networks:
+  pcw:
+    driver: bridge
+volumes:
+  pgdata:

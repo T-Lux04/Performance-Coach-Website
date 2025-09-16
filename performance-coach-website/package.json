@@ -1,5 +1,4 @@
 {
-  "dependencies": {
-    "express-rate-limit": "^7.5.0"
-  }
+  "name": "performance-coach-website-root",
+  "private": true
 }

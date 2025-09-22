@@ -56,7 +56,20 @@ app.post('/auth/login', async (req, res) => {
     const ok = await bcrypt.compare(password, user.password_hash);
     if (!ok) return res.status(401).json({ error: 'Invalid credentials' });
 
-    const token = jwt.sign({ sub: user.id, email: user.email }, process.env.JWT_SECRET || 'dev_secret_change_me', { expiresIn: '2h' });
+    // Ensure JWT_SECRET is defined
+    const jwtSecret = process.env.JWT_SECRET;
+    if (!jwtSecret) {
+      console.error('JWT_SECRET environment variable is required');
+      process.exit(1);
+    }
+    // Assign a JWT token that expires in 2 hours
+    const token = jwt.sign(
+      { sub: user.id, email: user.email }, 
+      jwtSecret, 
+      { expiresIn: '2h' }
+    );
+
+    // Set token in HTTP-only cookie
     res.cookie('token', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
@@ -74,6 +87,37 @@ app.post('/auth/login', async (req, res) => {
 app.post('/auth/logout', (req, res) => {
   res.clearCookie('token', { path: '/' });
   res.status(200).json({ success: true });
+});
+
+// Middleware to verify JWT token
+const verifyToken = (req, res, next) => {
+  const token = req.cookies.token;
+  if (!token) {
+    return res.status(401).json({ error: 'No token provided' });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (err) {
+    return res.status(401).json({ error: 'Invalid token' });
+  }
+};
+
+// Get current user information
+app.get('/auth/me', verifyToken, async (req, res) => {
+  try {
+    const { rows } = await query('SELECT id, email FROM users WHERE id = $1', [req.user.sub]);
+    if (rows.length === 0) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    const user = rows[0];
+    return res.status(200).json({ id: user.id, email: user.email });
+  } catch (err) {
+    console.error('Get user error', err);
+    return res.status(500).json({ error: 'Server error' });
+  }
 });
 
 app.post('/api/contact', async (req, res) => {

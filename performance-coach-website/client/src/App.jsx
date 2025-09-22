@@ -5,6 +5,7 @@ import Booking from './pages/Booking.jsx';
 import CompetitorPackage from './pages/CompetitorPackage.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
+import Dashboard from './pages/Dashboard.jsx';
 
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/booking" element={<Booking />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard/>} />
       </Routes>
     </Router>
   );
